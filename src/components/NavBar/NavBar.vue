@@ -44,9 +44,8 @@ export default {
 
 <style scoped>
 .navbar {
-  position: fixed;
   width: 100%;
-  padding: 3% 5%;
+  padding: 1% 5%;
   background-color: #222831;
 }
 .navbar-brand {

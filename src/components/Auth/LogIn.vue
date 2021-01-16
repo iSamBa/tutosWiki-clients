@@ -1,59 +1,94 @@
 <template>
-  <div class="row shadow bg-white">
-    <div class="col-sm-5">
-      <img
-        src="https://www.flaticon.com/svg/vstatic/svg/3135/3135715.svg?token=exp=1610756293~hmac=f971117cc5026fd5570ade7412312808"
-        alt="login-image"
-        srcset=""
-      />
-    </div>
-    <div class="col-sm-7">
-      <form>
-        <div class="form-group">
-          <input
-            type="email"
-            class="form-control"
-            aria-describedby="emailHelp"
-            placeholder="Your email"
-          />
-          <input type="password" class="form-control" placeholder="Password" />
-        </div>
-        <button type="submit" class="btn btn-block btn-dark">Login</button>
-      </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="../../../public/login.png" alt="" srcset="" />
+        <h2>Welcome to TutosWiki</h2>
+      </div>
+      <div class="col-lg-6">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="form-group form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Check me out</label
+            >
+          </div>
+          <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    getCurrentYear: () => {
+      return new Date().getFullYear();
+    },
+  },
+};
 </script>
 
 <style scoped>
-input {
-  margin: 3% 0;
-}
-img {
-  width: 60%;
-  margin: 10%;
-}
-
-button {
-  margin: 30px 0;
+.container {
+  width: 80%;
+  height: 80%;
+  margin: 0;
+  padding: 0;
+  border-radius: 3rem;
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.7)
+  );
 }
 
 .row {
-  border-radius: 10px;
-  position: absolute;
+  height: 100%;
+  width: 100%;
   margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 90%;
+  padding: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.col-sm-7,
-.col-sm-5 {
-  padding: 10% 3%;
+.col-lg-6 {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  margin: 0;
+  padding: 0;
 }
 </style>

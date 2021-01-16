@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="posts-container">
     <Post v-for="post in getPosts" :key="post.id" :post="post" />
   </div>
 </template>
@@ -17,5 +17,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.posts-container {
+  margin: 0;
+}
 </style>
