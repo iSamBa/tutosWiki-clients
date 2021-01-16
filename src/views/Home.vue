@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div>
     <h1>HOME</h1>
     <Posts :posts="getPosts" />
   </div>
@@ -48,7 +48,4 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
-  padding: 1% 10%;
-}
 </style>

@@ -1,8 +1,14 @@
 body{
   background-color : #dddddd;
   font-family: 'Ubuntu Mono', monospace;
-  height : 100vh;
+  height : 100%;
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
+}
+#app {
+  width: 100%;
+  height : 100vh;
+  position: relative;
+
 }

@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#">!>  Tutos-Wiki</a>
+    <a class="navbar-brand" href="#">!> Tutos-Wiki</a>
     <button
       class="navbar-toggler"
       type="button"
@@ -22,6 +22,15 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/about">About</router-link>
         </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/login">login</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/login">login</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/login">login</router-link>
+        </li>
       </ul>
     </div>
   </nav>
@@ -35,6 +44,8 @@ export default {
 
 <style scoped>
 .navbar {
+  position: fixed;
+  width: 100%;
   padding: 3% 5%;
   background-color: #222831;
 }
