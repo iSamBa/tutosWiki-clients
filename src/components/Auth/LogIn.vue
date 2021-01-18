@@ -1,94 +1,65 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <img src="../../../public/login.png" alt="" srcset="" />
-        <h2>Welcome to TutosWiki</h2>
-      </div>
-      <div class="col-lg-6">
-        <form>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-            <small id="emailHelp" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
+  <div
+    class="bg-primary-100 bg-opacity-60 p-10 md:w-max w-80 rounded-3xl shadow-lg flex md:flex-row flex-col overflow-hidden items-center md:space-x-8"
+  >
+    <!-- Logo and presentation -->
+    <div class="flex flex-col items-center justify-center">
+      <img src="../../../public/login.png" alt="" srcset="" />
+      <h1 class="text-xl text-gray-800 font-bold">Welcome to TutosWiki</h1>
+      <p class="text-sm text-gray-600">
+        Login to get the full access to the resouces
+      </p>
+    </div>
+    <!-- Login form -->
+    <div class="flex flex-col items-center justify-center">
+      <form class="flex flex-col">
+        <input
+          class="outline-none focus:ring-2 focus:ring-gray-600 m-2 p-2 rounded-md h-8"
+          type="email"
+          placeholder="Email"
+        />
+        <input
+          class="outline-none focus:ring-2 focus:ring-gray-600 m-2 p-2 rounded-md h-8"
+          type="password"
+          placeholder="Password"
+        />
+
+        <button
+          class="m-2 h-8 w-72 hover:bg-secondary-200 border-secondary-200 border-2 rounded-md"
+          type="submit"
+        >
+          <div
+            class="flex justify-center items-center hover:bg-secondary-200 text-secondary-200 hover:text-primary-100"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+              ></path>
+            </svg>
+            Login
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-            />
-          </div>
-          <div class="form-group form-check">
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
-            <label class="form-check-label" for="exampleCheck1"
-              >Check me out</label
-            >
-          </div>
-          <button type="submit" class="btn btn-dark">Submit</button>
-        </form>
-      </div>
+        </button>
+      </form>
+      <p class="text-sm text-secondary-200">
+        If you don't have an account
+        <a href="/register"> Create one </a>
+      </p>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  computed: {
-    getCurrentYear: () => {
-      return new Date().getFullYear();
-    },
-  },
-};
+export default {};
 </script>
 
-<style scoped>
-.container {
-  width: 80%;
-  height: 80%;
-  margin: 0;
-  padding: 0;
-  border-radius: 3rem;
-  background: linear-gradient(
-    to left bottom,
-    rgba(255, 255, 255, 0.3),
-    rgba(255, 255, 255, 0.7)
-  );
-}
-
-.row {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 3%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.col-lg-6 {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-}
-
-img {
-  margin: 0;
-  padding: 0;
-}
+<style>
 </style>

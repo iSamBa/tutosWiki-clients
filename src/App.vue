@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
+  <div
+    id="app"
+    class="bg-gradient-to-tr to-secondary-200 from-secondary-100 h-screen text-white flex items-center justify-center"
+  >
     <nav-bar v-if="isLoggedIn" />
-    <div id="content">
-      <router-view />
-    </div>
+    <router-view />
   </div>
 </template>
 <script>
