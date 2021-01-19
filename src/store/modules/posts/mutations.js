@@ -4,10 +4,11 @@ const mutations = {
   },
   remove(state, payload) {
     const postId = payload.id;
+    console.log(postId);
     state.posts = state.posts.filter(post => {
       return post._id !== postId;
     });
-    console.log(state.posts);
+
   },
   update(state, payload) {
     const post = payload.post;

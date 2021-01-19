@@ -1,5 +1,5 @@
 <template>
-  <div class="posts-container">
+  <div class="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
     <Post v-for="post in getPosts" :key="post.id" :post="post" />
   </div>
 </template>
@@ -18,7 +18,4 @@ export default {
 </script>
 
 <style scoped>
-.posts-container {
-  margin: 0;
-}
 </style>

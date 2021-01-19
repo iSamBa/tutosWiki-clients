@@ -4,8 +4,13 @@
   >
     <!-- Logo and presentation -->
     <div class="flex flex-col items-center justify-center">
-      <img src="../../../public/login.png" alt="" srcset="" />
-      <h1 class="text-xl text-gray-800 font-bold">Welcome to TutosWiki</h1>
+      <img
+        src="../../../public/login.png"
+        alt=""
+        srcset=""
+        class="w-48 transform ease-in-out duration-500 hover:scale-110"
+      />
+      <h1 class="text-xl text-gray-800 font-bold my-2">Welcome to TutosWiki</h1>
       <p class="text-sm text-gray-600">
         Login to get the full access to the resouces
       </p>
@@ -26,7 +31,6 @@
 
         <button
           class="m-2 h-8 w-72 hover:bg-secondary-200 border-secondary-200 border-2 rounded-md"
-          type="submit"
         >
           <div
             class="flex justify-center items-center hover:bg-secondary-200 text-secondary-200 hover:text-primary-100"

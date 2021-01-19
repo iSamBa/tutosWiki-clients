@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h1>HOME</h1>
+  <div class="pt-12">
     <Posts :posts="getPosts" />
   </div>
 </template>
@@ -22,7 +21,12 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["addPost", "removePost", "updatePost", "fetchAllPosts"]),
+    ...mapActions({
+      addPost: "posts/addPost",
+      removePost: "posts/removePost",
+      updatePost: "posts/updatePost",
+      fetchAllPosts: "posts/fetchAllPosts",
+    }),
     handleUpdate() {
       this.updatePost({ post: { _id: this.id, content: this.content } });
     },
@@ -41,7 +45,7 @@ export default {
   },
   computed: {
     getPosts() {
-      return this.$store.getters.getPosts;
+      return this.$store.getters["posts/getPosts"];
     },
   },
 };
