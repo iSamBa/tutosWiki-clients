@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-primary-100 bg-opacity-60 p-10 md:w-max w-80 rounded-3xl shadow-lg flex md:flex-row flex-col overflow-hidden items-center md:space-x-8"
+    class="bg-primary-100 bg-opacity-60 p-10 lg:w-max w-80 rounded-3xl shadow-lg flex lg:flex-row flex-col overflow-hidden items-center lg:space-x-8"
   >
     <!-- Logo and presentation -->
     <div class="flex flex-col items-center justify-center">
