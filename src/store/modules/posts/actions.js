@@ -11,9 +11,13 @@ const actions = {
     context.commit("update", payload);
   },
   async fetchAllPosts(context) {
-    const response = await axios.get("http://localhost:5000/posts");
-    context.commit("add", { posts: response.data.posts });
-  }
+    try {
+      const response = await axios.get("http://localhost:5000/posts");
+      context.commit("add", { posts: response.data.posts });
+    } catch (error) {
+      console.error(error.stack);
+    }
+  },
 };
 
 export default actions;

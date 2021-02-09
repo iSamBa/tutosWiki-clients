@@ -4,22 +4,20 @@ const mutations = {
   },
   remove(state, payload) {
     const postId = payload.id;
-    console.log(postId);
-    state.posts = state.posts.filter(post => {
+    state.posts = state.posts.filter((post) => {
       return post._id !== postId;
     });
-
   },
   update(state, payload) {
     const post = payload.post;
-    state.posts = state.posts.map(currPost => {
+    state.posts = state.posts.map((currPost) => {
       if (currPost._id == post._id) {
         return { ...post };
       } else {
         return { ...currPost };
       }
     });
-  }
+  },
 };
 
 export default mutations;

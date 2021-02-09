@@ -12,7 +12,7 @@
       />
       <h1 class="brand">Welcome to TutosWiki</h1>
       <p class="brand-text">
-        Login to get the full access to the resouces
+        Registration page
       </p>
     </div>
     <!-- Login form -->
@@ -22,6 +22,11 @@
           class="user-input"
           type="text"
           placeholder="User name"
+        />
+        <input
+          class="user-input"
+          type="email"
+          placeholder="Email"
         />
         <input
           class="user-input"
@@ -49,14 +54,10 @@
                 d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
               ></path>
             </svg>
-            Login
+            Register
           </div>
         </button>
       </form>
-      <p class="text-sm text-secondary-200">
-        If you don't have an account
-        <a href="/register"> Create one </a>
-      </p>
     </div>
   </div>
 </template>

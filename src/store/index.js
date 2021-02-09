@@ -11,6 +11,6 @@ export default new Vuex.Store({
   actions: {},
   modules: {
     posts: postsModule,
-    burgerMenu: burgerMenuModule
-  }
+    burgerMenu: burgerMenuModule,
+  },
 });
