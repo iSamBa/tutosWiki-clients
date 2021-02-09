@@ -1,6 +1,11 @@
 <template>
   <div class="pt-12">
-    <Posts :posts="getPosts" />
+    <div v-if="getPosts">
+      <Posts :posts="getPosts" />
+    </div>
+    <div v-else>
+      <h2>Welcome to home page</h2>
+    </div>
   </div>
 </template>
 

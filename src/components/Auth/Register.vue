@@ -17,21 +17,24 @@
     </div>
     <!-- Login form -->
     <div class="flex flex-col items-center justify-center">
-      <form class="flex flex-col">
+      <form class="flex flex-col" @submit.prevent="registerUser">
         <input
           class="user-input"
           type="text"
           placeholder="User name"
+          v-model="username"
         />
         <input
           class="user-input"
           type="email"
           placeholder="Email"
+          v-model="email"
         />
         <input
           class="user-input"
           type="password"
           placeholder="Password"
+          v-model="password"
         />
 
         <button
@@ -63,7 +66,29 @@
 </template>
 
 <script>
-export default {};
+import { mapActions } from "vuex";
+
+export default {
+  data: () =>{
+    return {
+        email : "",
+        username :"",
+        password: "",
+    }
+  },
+  methods: {
+    ...mapActions({ register: "auth/register" }),
+    
+    registerUser() {
+      const user = {
+        email :this.email,
+        userName : this.username,
+        password : this.password
+      };
+      this.register(user);
+    },
+  },
+};
 </script>
 
 <style scoped>
