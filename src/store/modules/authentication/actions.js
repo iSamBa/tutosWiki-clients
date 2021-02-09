@@ -8,15 +8,15 @@ const actions = {
     context.commit("clear");
   },
   register(context, payload) {
-    console.log("register called");
-    console.log(payload);
-
     axios
       .post("http://localhost:5000/auth/register", payload)
       .then((response) => {
-        console.log(response);
+        context.commit("setUser", response.data.data);
+        context.commit("setStatus", response.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        context.commit("setStatus", error.response.data);
+      });
   },
 };
 

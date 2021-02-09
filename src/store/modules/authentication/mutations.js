@@ -1,9 +1,12 @@
 const mutations = {
-  set(state, payload) {
+  setUser(state, payload) {
     state.user = payload;
   },
-  clear(state) {
+  clearUser(state) {
     state.user = {};
+  },
+  setStatus(state, payload) {
+    state.status = { ...state.status, ...payload };
   },
 };
 

@@ -7,6 +7,11 @@ export default {
   namespaced: true,
   state: {
     user: {},
+    status: {
+      ok: false,
+      message: "",
+      data: {},
+    },
   },
   mutations,
   actions,
