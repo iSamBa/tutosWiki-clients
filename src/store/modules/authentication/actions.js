@@ -2,8 +2,12 @@ import axios from "axios";
 
 const actions = {
   async login(context, payload) {
-    axios
-      .post("http://localhost:5000/auth/login", payload)
+    axios({
+      method: "POST",
+      url: "http://localhost:5000/auth/login",
+      data: payload,
+      withCredentials: true,
+    })
       .then((response) => {
         console.log(response);
         context.commit("setUser", response.data.data);
@@ -18,9 +22,12 @@ const actions = {
     context.commit("clear");
   },
   register(context, payload) {
-    console.log("Register this user : " + { ...payload });
-    axios
-      .post("http://localhost:5000/auth/register", payload)
+    axios({
+      method: "POST",
+      url: "http://localhost:5000/auth/register",
+      data: payload,
+      withCredentials: true,
+    })
       .then((response) => {
         context.commit("setStatus", response.data);
       })
