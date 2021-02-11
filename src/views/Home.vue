@@ -1,10 +1,11 @@
 <template>
   <div class="pt-12">
-    <div v-if="getPosts">
+    <div v-if="getPosts.length > 0">
       <Posts :posts="getPosts" />
     </div>
-    <div v-else>
-      <h2>Welcome to home page</h2>
+    <div class="flex items-center justify-center" v-else>
+      <img class="w-24" src="../../public/oh.svg" alt="oh-no">
+      <h2>There is no tutorial for the moment</h2>
     </div>
   </div>
 </template>

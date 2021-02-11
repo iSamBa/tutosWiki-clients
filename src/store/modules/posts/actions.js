@@ -10,16 +10,14 @@ const actions = {
   updatePost(context, payload) {
     context.commit("update", payload);
   },
-  async fetchAllPosts() {
-    // const response = await axios.get("http://localhost:5000/posts");
+  async fetchAllPosts(context) {
     axios({
       method: "GET",
       url: "http://localhost:5000/posts",
       withCredentials: true,
     })
       .then((response) => {
-        console.log(response);
-        // context.commit("add", { posts: response.data.posts });
+        context.commit("add", { posts: response.data.data });
       })
       .catch((error) => console.log(error));
   },

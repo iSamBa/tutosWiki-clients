@@ -52,6 +52,9 @@
             <li class="link">
               <router-link to="/login">Login</router-link>
             </li>
+            <li class="link">
+              <router-link to="/login">Logout</router-link>
+            </li>
           </ul>
         </div>
       </div>
@@ -70,7 +73,7 @@
           <router-link to="/">Contact</router-link>
         </li>
         <li class="link">
-          <router-link to="/login">Login</router-link>
+          <button @click="logout">Logout</button>
         </li>
       </ul>
     </div>
@@ -85,6 +88,7 @@ export default {
     ...mapActions({
       openMenu: "burgerMenu/openMenu",
       closeMenu: "burgerMenu/closeMenu",
+      logoutUser :"auth/logout"
     }),
     toggleBurgerMenu() {
       if (!this.isBurgerMenuOpen) {
@@ -98,6 +102,9 @@ export default {
         ? document.getElementById("menu").classList.remove("hidden")
         : document.getElementById("menu").classList.add("hidden");
     },
+    logout:()=>{
+      this.logoutUser();
+    }
   },
   computed: {
     isBurgerMenuOpen() {
