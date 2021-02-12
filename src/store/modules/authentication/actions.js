@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const actions = {
-  async login(context, payload) {
+  login(context, payload) {
     axios({
       method: "POST",
       url: "http://localhost:5000/auth/login",
@@ -9,14 +9,15 @@ const actions = {
       withCredentials: true,
     })
       .then((response) => {
-        context.commit("setUser", response.data.data);
-        context.commit("setStatus", response.data);
+        context.commit("setUsername", response.data.data.userName);
+        context.commit("setIsAuthenticated", true);
+        context.commit("setIsAdmin", response.data.data.isAdmin);
       })
       .catch((error) => {
         context.commit("setStatus", error.response.data);
       });
   },
-  async logout(context) {
+  logout(context) {
     axios({
       method: "POST",
       url: "http://localhost:5000/auth/logout",

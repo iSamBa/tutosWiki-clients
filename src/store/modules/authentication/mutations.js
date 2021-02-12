@@ -1,9 +1,17 @@
 const mutations = {
-  setUser(state, payload) {
-    state.user = payload;
+  setUsername(state, payload) {
+    state.username = payload;
+  },
+  setIsAuthenticated(state, payload) {
+    state.isAuthenticated = payload;
+  },
+  setIsAdmin(state, payload) {
+    state.isAdmin = payload;
   },
   clear(state) {
-    state.user = {};
+    state.username = "";
+    state.isAdmin = false;
+    state.isAuthenticated = false;
     state.status = {
       ok: false,
       message: "",

@@ -6,7 +6,9 @@ import getters from "./getters.js";
 export default {
   namespaced: true,
   state: {
-    user: {},
+    username: "",
+    isAuthenticated: false,
+    isAdmin: false,
     status: {
       ok: false,
       message: "",

@@ -53,7 +53,7 @@
               <router-link to="/login">Login</router-link>
             </li>
             <li class="link">
-              <router-link to="/login">Logout</router-link>
+              <button @click="logout">Logout</button>
             </li>
           </ul>
         </div>
@@ -97,12 +97,12 @@ export default {
         this.closeMenu();
       }
     },
-    handleBurgerMenu: () => {
+    handleBurgerMenu(){
       document.getElementById("menu").classList.contains("hidden")
         ? document.getElementById("menu").classList.remove("hidden")
         : document.getElementById("menu").classList.add("hidden");
     },
-    logout:()=>{
+    logout(){
       this.logoutUser();
     }
   },
