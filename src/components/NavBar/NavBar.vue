@@ -40,20 +40,26 @@
         </button>
         <div class="hidden lg:block">
           <ul class="flex flex-row items-start py-2">
-            <li class="link">
+            <li v-if="isAuthenticated && getUsername" class="link">
+              Hello {{getUsername}} !
+            </li>
+            <li v-if="isAuthenticated" class="link">
               <router-link to="/">Home</router-link>
             </li>
-            <li class="link">
+            <li v-if="isAuthenticated" class="link">
               <router-link to="/about">About</router-link>
             </li>
-            <li class="link">
+            <li v-if="isAuthenticated" class="link">
               <router-link to="/">Contact</router-link>
             </li>
-            <li class="link">
-              <router-link to="/login">Login</router-link>
+            <li v-if="isAuthenticated" class="link">
+              <button @click="logout">Logout</button>
             </li>
             <li class="link">
-              <button @click="logout">Logout</button>
+              <router-link v-if="!isAuthenticated" to="/login">Login</router-link>
+            </li>
+            <li class="link">
+              <router-link v-if="!isAuthenticated" to="/login">Register</router-link>
             </li>
           </ul>
         </div>
@@ -64,16 +70,22 @@
     <div id="menu" v-if="isBurgerMenuOpen">
       <ul class="flex flex-col lg:flex-row items-start py-2">
         <li class="link">
-          <router-link to="/">Home</router-link>
+          <router-link v-if="isAuthenticated" to="/">Home</router-link>
         </li>
         <li class="link">
-          <router-link to="/about">About</router-link>
+          <router-link v-if="isAuthenticated" to="/about">About</router-link>
         </li>
         <li class="link">
-          <router-link to="/">Contact</router-link>
+          <router-link v-if="isAuthenticated" to="/">Contact</router-link>
         </li>
         <li class="link">
-          <button @click="logout">Logout</button>
+          <button v-if="isAuthenticated" @click="logout">Logout</button>
+        </li>
+        <li class="link">
+          <router-link v-if="!isAuthenticated" to="/login">Login</router-link>
+        </li>
+        <li class="link">
+          <router-link v-if="!isAuthenticated" to="/login">Register</router-link>
         </li>
       </ul>
     </div>
@@ -81,7 +93,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions} from "vuex";
 export default {
   name: "NavBar",
   methods: {
@@ -90,6 +102,7 @@ export default {
       closeMenu: "burgerMenu/closeMenu",
       logoutUser :"auth/logout"
     }),
+
     toggleBurgerMenu() {
       if (!this.isBurgerMenuOpen) {
         this.openMenu();
@@ -110,6 +123,15 @@ export default {
     isBurgerMenuOpen() {
       return this.$store.getters["burgerMenu/isBurgerMenuOpen"];
     },
+    getUsername() {
+      return this.$store.getters["auth/getUsername"];
+    },
+    isAuthenticated() {
+      return this.$store.getters["auth/isAuthenticated"];
+    },
+    isAdmin() {
+      return this.$store.getters["auth/isAdmin"]
+    }
   },
 };
 </script>

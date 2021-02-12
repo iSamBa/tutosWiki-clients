@@ -1,6 +1,12 @@
 const getters = {
-  getUser: (state) => {
-    return state.user;
+  getUsername: (state) => {
+    return state.username;
+  },
+  isAuthenticated: (state) => {
+    return state.isAuthenticated;
+  },
+  isAdmin: (state) => {
+    return state.isAdmin;
   },
   getStatus: (state) => {
     return state.status;
