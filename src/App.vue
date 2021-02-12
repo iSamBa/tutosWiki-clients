@@ -3,13 +3,12 @@
     id="app"
     class="h-full w-full bg-gradient-to-tr to-secondary-200 from-secondary-100 text-white flex flex-col items-start"
   >
-    <nav-bar v-if="isLoggedIn" class="h-10" />
+    <nav-bar class="h-10" />
     <div
       @click="closeBurgerMenu"
       id="main"
       class="flex min-h-screen h-full w-full justify-center items-center"
     >
-      <router-view />
     </div>
   </div>
 </template>
@@ -21,25 +20,29 @@ export default {
   components: {
     NavBar,
   },
-  data: () => {
-    return {
-      isLoggedIn: true,
-    };
-  },
-
-  methods: {
-    ...mapActions({ closeMenu: "burgerMenu/closeMenu" }),
+   methods: {
+    ...mapActions({ 
+      closeMenu: "burgerMenu/closeMenu", 
+      getAuthenticatedUser:"auth/getAuthenticatedUser" 
+      }),
     closeBurgerMenu() {
       if (this.isBurgerMenuOpen) {
         this.closeMenu();
       }
     },
+    fetchUser(){
+      this.getAuthenticatedUser();
+    }
   },
   computed: {
     isBurgerMenuOpen() {
       return this.$store.getters["burgerMenu/isBurgerMenuOpen"];
     },
   },
+
+  created() {
+    this.fetchUser();
+  }
 };
 </script>
 <style>

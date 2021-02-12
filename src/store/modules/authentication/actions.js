@@ -45,6 +45,22 @@ const actions = {
         context.commit("setStatus", error.response.data);
       });
   },
+  getAuthenticatedUser(context) {
+    axios({
+      method: "GET",
+      url: "http://localhost:5000/auth/",
+      withCredentials: true,
+    })
+      .then((response) => {
+        console.log(response.data);
+        context.commit("setUsername", response.data.data.username);
+        context.commit("setIsAuthenticated", true);
+        context.commit("setIsAdmin", response.data.data.isAdmin);
+      })
+      .catch((error) => {
+        context.commit("setStatus", error.response.data);
+      });
+  },
 };
 
 export default actions;
